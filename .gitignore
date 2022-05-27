@@ -1,0 +1,5 @@
+dataset/
+classifiers/
+results/
+__pycache__/
+idea/

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="904a8ba3-6eb4-4ad5-843c-b4546edd0d87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/AutoDoorProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doorbell/EndArun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyData.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classifiers/Arun_classifier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/0Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/100Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/101Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/102Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/103Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/104Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/105Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/106Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/107Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/108Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/109Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/10Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/110Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/111Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/112Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/113Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/114Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/115Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/116Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/117Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/118Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/119Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/11Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/120Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/121Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/122Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/123Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/124Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/125Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/126Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/127Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/128Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/129Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/12Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/130Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/131Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/132Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/133Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/134Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/135Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/136Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/137Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/138Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/139Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/13Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/140Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/141Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/142Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/143Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/144Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/145Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/146Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/147Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/148Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/149Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/14Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/150Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/151Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/152Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/153Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/154Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/155Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/156Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/157Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/158Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/159Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/15Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/160Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/161Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/162Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/163Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/164Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/165Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/166Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/167Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/168Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/169Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/16Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/170Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/171Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/172Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/173Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/174Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/175Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/176Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/177Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/178Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/179Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/17Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/180Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/181Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/182Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/183Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/184Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/185Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/186Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/187Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/188Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/189Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/18Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/190Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/191Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/192Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/193Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/194Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/195Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/196Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/197Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/198Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/199Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/19Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/1Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/200Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/201Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/202Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/203Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/204Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/205Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/206Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/207Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/208Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/209Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/20Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/210Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/211Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/212Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/213Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/214Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/215Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/216Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/217Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/218Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/219Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/21Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/220Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/221Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/222Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/223Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/224Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/225Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/226Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/227Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/228Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/229Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/22Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/230Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/231Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/232Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/233Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/234Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/235Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/236Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/237Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/238Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/239Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/23Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/240Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/241Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/242Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/243Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/244Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/245Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/246Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/247Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/248Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/249Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/24Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/250Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/251Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/252Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/253Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/254Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/255Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/256Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/257Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/258Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/259Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/25Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/260Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/261Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/262Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/263Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/264Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/265Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/266Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/267Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/268Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/269Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/26Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/270Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/271Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/272Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/273Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/274Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/275Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/276Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/277Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/278Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/279Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/27Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/280Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/281Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/282Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/283Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/284Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/285Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/286Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/287Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/288Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/289Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/28Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/290Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/291Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/292Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/293Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/294Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/295Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/296Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/297Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/298Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/299Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/29Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/2Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/300Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/30Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/31Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/32Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/33Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/34Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/35Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/36Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/37Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/38Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/39Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/3Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/40Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/41Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/42Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/43Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/44Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/45Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/46Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/47Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/48Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/49Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/4Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/50Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/51Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/52Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/53Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/54Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/55Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/56Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/57Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/58Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/59Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/5Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/60Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/61Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/62Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/63Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/64Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/65Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/66Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/67Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/68Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/69Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/6Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/70Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/71Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/72Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/73Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/74Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/75Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/76Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/77Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/78Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/79Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/7Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/80Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/81Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/82Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/83Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/84Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/85Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/86Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/87Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/88Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/89Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/8Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/90Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/91Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/92Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/93Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/94Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/95Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/96Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/97Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/98Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/99Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/Arun/9Arun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entries.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file handling.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prime.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-0-33-31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-0-34-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-0-44-43.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-0-55-48.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-0-56-57.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-0-57-53.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-0-58-28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-1-2-52.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-1-5-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Arun2020-12-03-1-9-52.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Ganesh2021-07-29-14-51-37.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Ganesh2021-09-03-13-52-54.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Lata2020-12-03-0-38-28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Mahesh2021-09-10-21-35-52.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Raj2021-07-29-18-31-27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Raj2021-09-03-23-37-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Ruturaj2022-05-13-23-33-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Ruturaj2022-05-13-23-38-36.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/haarcascade_frontalface_default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/login.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="1vz0F6lqDmvMJ01IvTNhzsjgzJE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/ajay/Desktop/AutoDoorProject"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.gui">
+    <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AutoDoorProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_21" type="PythonConfigurationType" factoryName="Python">
+      <module name="AutoDoorProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_21.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_23" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AutoDoorProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_23.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_33" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AutoDoorProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_33.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_36" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AutoDoorProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_36.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="string" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AutoDoorProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/Notepad++/backup" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:/Notepad++/backup/string.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.gui" />
+        <item itemvalue="Python.scratch_36" />
+        <item itemvalue="Python.scratch_33" />
+        <item itemvalue="Python.scratch_23" />
+        <item itemvalue="Python.string" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="904a8ba3-6eb4-4ad5-843c-b4546edd0d87" name="Default Changelist" comment="" />
+      <created>1627549509725</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627549509725</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
