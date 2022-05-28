@@ -1,11 +1,16 @@
+from itertools import count
+from sre_constants import SUCCESS
 import tkinter as tk 
 from tkinter import messagebox
 from tkinter import ttk
 from PIL import ImageTk, Image
+from cv2 import imshow
+from sklearn.neighbors import NearestCentroid
+from getkey import getkey, key
 import pytesseract
 import cv2
 import numpy as np
-#import face_recognition
+import face_recognition
 import pandas as pd
 import os
 import csv
@@ -17,8 +22,34 @@ from pushbullet import PushBullet
 from pywebio.input import *
 from pywebio.output import *
 from pywebio.session import *
+from tkinter import filedialog
+from tkinter.filedialog import askopenfile
 
 access_token="o.fVGtMeajD1mIFzDei8cH8UPYWsYp0omo"
+
+path = 'Images_Attendance'
+images = []
+classNames = []
+deleted =[]
+myList = os.listdir(path)
+print("MyList")
+print(myList)
+for cl in myList:
+    curImg = cv2.imread(f'{path}/{cl}')
+    images.append(curImg)
+    classNames.append(os.path.splitext(cl)[0])
+print("Classname",classNames)
+
+def findEncodings(images):
+    encodeList =[]
+    for img in images:
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        encode = face_recognition.face_encodings(img)[0]
+        encodeList.append(encode)
+    print("Enconding Done...........................")
+    return encodeList
+
+encodeListKnown=findEncodings(images)
 
 def startpage(container):
     label = tk.Label(container, text ="Automatic Door Unlock System", font = "Helvetica", foreground="#263942")     #Add label
@@ -51,13 +82,6 @@ def startpage(container):
     button1.place(x = 95, y = 110)
     button2 = ttk.Button(container, text ="Doorbell",command = lambda : doorbell()) #call doorbell function to check authorised user or not
     button2.place(x = 95,y = 210)
-
-
-
-
-
-    
-
 
 def admin(container):
     
@@ -102,7 +126,6 @@ def admin(container):
     button3 = ttk.Button(container, text ="Back",command = lambda : back_menu(container))   #call back_menu on click
     button3.place(x = 82,y = 270)
 
-
 def new_user(container):
     new_user = tk.StringVar()
     flag = tk.IntVar()
@@ -123,154 +146,105 @@ def new_user(container):
             widget.destroy()
         admin(frame)
 
-    def check(container,name,flag,button1,button2,button3,num_images):
+    def check(container,name):
+        if(name==""):
+            return
         data = pd.read_csv('User.csv')
-
         if(name in list(data.Name)):
             messagebox.showerror("Error","User Name already Exists")    
             return
-        create_dataset(container,name,flag,button1,button2,button3,num_images)  #create dataset for user
-        return
 
-    def build_model(name,button1,button2,button3):
-        entry_name.delete(0,'end')   #
+        if(name.upper() in deleted):
+            deleted.remove(name.upper())
+        print("------------After deletion---------------",deleted)
+        data = pd.read_csv('User.csv')
+        data.loc[len(data.Name)] = [name]
+        data.set_index('Name',inplace=True)
+        data.to_csv('User.csv')
 
-        train_model(name,button1,button2,button3)   
+
+        path2=os.getcwd() + f"/Images_Attendance/"
+        path2=path2+str(name)
+        vid = cv2.VideoCapture(0)
+  
+        while(True):
+            
+            # Capture the video frame
+            # by frame
+            ret, frame = vid.read()
+        
+            # Display the resulting frame
+            cv2.imshow('frame', frame)
+            
+            # the 'q' button is set as the
+            # quitting button you may use any
+            # desired button of your choice
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                cv2.imwrite(path2+".jpg",frame)
+                break
+        
+        # After the loop release the cap object
+        vid.release()
+        # Destroy all the windows
+        cv2.destroyAllWindows()
+              
+        # encodeListKnown=findEncodings()
+        messagebox.showinfo("Notification","Imaged Saved !")
+        clear(container)
+        
+        curImg = cv2.imread(path2+".jpg")
+        images.append(curImg)
+        classNames.append(name)
+        print("Classname",classNames)
+
+        
+        curImg = cv2.cvtColor(curImg, cv2.COLOR_BGR2RGB)
+        encode = face_recognition.face_encodings(curImg)[0]
+        encodeListKnown.append(encode)
+        print("Encodeing done after image upload")
+
 
 
     entry_name = tk.Entry(container,textvariable = new_user)    #take user name and save to new_user 
     print("Enter User Name:", new_user.get())
     entry_name.place(x = 165, y = 90)
-    ttk.Style().configure("TButton", padding=6, relief="flat",
-            background="#ccc",foreground='green') 
+    ttk.Style().configure("TButton", padding=6, relief="flat",background="#ccc",foreground='green') 
     
     
     button3 = ttk.Button(container, text ="Back",command = lambda : clear(container),state = tk.NORMAL) #adfter click go back to admin frame
 
-    #Button to train dataset. Initially disable...enable after the creating dataset
-    button2 = ttk.Button(container, text ="Train dataset",state = tk.DISABLED,command = lambda : build_model(new_user.get(),button1,button2,button3))
-  
     #Button to create dataset
-    button1 = ttk.Button(container, text ="Create dataset",command = lambda : check(container,new_user.get(),flag,button1,button2,button3,num_images)) 
+    button1 = ttk.Button(container, text ="Upload Image",command = lambda : check(container,new_user.get())) 
     
-    button1.place(x = 310, y = 180)
-    button2.place(x = 180,y = 180)
-    button3.place(x = 50,y = 180)
-
-
-
-def create_dataset(container,name,flag,button1,button2,button3,num_images):
-    path = "./dataset/" + name
-    num_of_images = 0
-    detector = cv2.CascadeClassifier("static/haarcascade_frontalface_default.xml")  #loading require haar-cascade XML file
-    try:
-        os.makedirs(path)   #create folder for user
-    except:
-        print('Directory Already Created')
-    vid = cv2.VideoCapture(0)   #define video capture object
-    while True:
-        ret, img = vid.read()   #capture the video frame 
-        new_img = None
-        grayimg = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)     #Initially image is a three-layer image i.e RGB so it converted to one layer image i.e. grayimage
-        face = detector.detectMultiScale(image=grayimg, scaleFactor=1.2, minNeighbors=5)   #this method return boundary rectangles for detected face  
-        key = 0
-        for x, y, w, h in face: #iterating through reactangle of detected faces
-            cv2.rectangle(img, (x, y), (x+w, y+h), (0, 0, 0), 2)
-            cv2.putText(img, "Face Detected", (x, y-5), cv2.FONT_HERSHEY_PLAIN, 0.8, (0, 0, 255))
-            cv2.putText(img, str(str(num_of_images)+" images captured"), (x, y+h+20), cv2.FONT_HERSHEY_PLAIN, 0.8, (0, 0, 255))
-            new_img = img[y:y+h, x:x+w]
-            cv2.imshow("FaceDetection", img)      #display image
-            key = cv2.waitKey(1) & 0xFF
-        try :
-            cv2.imwrite(str(path+"/"+str(num_of_images)+name+".jpg"), new_img)  #store image in dateset/user folder
-            num_of_images += 1
-        except :
-            pass
-        
-        if num_of_images > 300:
-            break
-    cv2.destroyAllWindows() #destroy all window
-    print(num_of_images)
-    button2['state'] = "normal"
-    button3['state'] = 'disabled'
-    button1['state'] = 'disabled'
-    flag.set(1)
-    num_images.set(num_of_images)
-    print(flag.get())
-    app.protocol("WM_DELETE_WINDOW",disable_event)     #disabling the x button to close the window
-    s = f"Images captuared : {num_images.get()}"
-    label1 = tk.Label(container, text = s, font = "Helvetica", foreground="red")
-    label1.config(font=("Helvetica", 12))
-    label1.place(x = 150,y = 250)
-    return
-
-
-def train_model(name,button1,button2,button3):
-    path = os.path.join(os.getcwd()+"/dataset/"+name+"/")
-
-    faces = []
-    ids = []
-    labels = []
-    pictures = {}
-
-    for root,dirs,files in os.walk(path):
-        pictures = files
-
-
-    for pic in pictures :
-        imgpath = path+pic
-        img = Image.open(imgpath).convert('L')
-        imageNp = np.array(img, 'uint8')
-        id = int(pic.split(name)[0])
-        #names[name].append(id)
-        faces.append(imageNp)
-        ids.append(id)
-
-    ids = np.array(ids)
-    #Train and save classifier
-    clf = cv2.face.LBPHFaceRecognizer_create()
-    clf.train(faces, ids)
-    clf.write("./classifiers/"+name+"_classifier.xml")
-    button2['state'] = 'disabled'
-    button3['state'] = "normal"
-    button1['state'] = "normal"
-    app.protocol("WM_DELETE_WINDOW",close)
-
-    data = pd.read_csv('User.csv')
-    data.loc[len(data.Name)] = [name]
-    data.set_index('Name',inplace=True)
-    
-    data.to_csv('User.csv')
-    
-    messagebox.showinfo("Notififcation","Succesfully Trained the model")
-
+    button1.place(x = 280, y = 180)
+    button3.place(x = 70,y = 180)
 
 def delete_selected(frame,Lb1): #delete selected user releted data
     a = Lb1.get(Lb1.curselection()).split(' ')
     print(a)    #['1.', 'Ajay']
-    path = os.getcwd()
-    
-    path1 = path + f"/dataset/{a[1]}"
-    path2 = path + f'/classifiers/{a[1]}_classifier.xml' 
-    #print(path,path1,path2)
-    shutil.rmtree(path1) #shutil.rmtree() is used to delete an entire directory tree, path must point to a directory 
+
+    name=" ".join(a[1:])
+
+    path2=os.getcwd() + f"/Images_Attendance/"
+    path2=path2 + name +".jpg"
+    pname=name.upper()
+    deleted.append(pname)
+    print("Printing Deleted List: ",deleted)
     os.remove(path2)    #s.remove() method in Python is used to remove or delete a file path
     
     data = pd.read_csv('User.csv')
     print("User Before: ",data)
-    new_data = data[data.Name != a[1]]  #Create new list which not contain selected user
+    new_data = data[data.Name != name]  #Create new list which not contain selected user
     print("User After", new_data)
     new_data.set_index('Name',inplace = True) ## setting Name as index column
     print("New Dataset : ",new_data)
     new_data.to_csv('User.csv') #save new data to User.csv file
     
-    
-        
     for widget in frame.winfo_children():   #clear frame
         widget.destroy()        
         
     user_list(frame)    #show frame with updated list
-
+    
 
 def user_list(container):   #show user list and perform delete operation if require
     label = tk.Label(container, text ="List of Existing Users", font = "Helvetica", foreground="#263942")
@@ -295,8 +269,6 @@ def user_list(container):   #show user list and perform delete operation if requ
             widget.destroy()
         
         admin(frame)
-
-    
 
     button1 = ttk.Button(container, text ="Delete", 
 							command = lambda : delete_selected(container,Lb1))  #call delete_seletected function with given conatainer 
@@ -325,88 +297,83 @@ def sendNotification(personName,personImg):
     print("Message sent successfully...")
 
 def doorbell():
+        flg=0
+        userName="Unauthorised"
+        userImg=None
         data = pd.read_csv("User.csv")
         names = list(data.Name)
-        face_cascade = cv2.CascadeClassifier('./static/haarcascade_frontalface_default.xml')
-        recognizer = cv2.face.LBPHFaceRecognizer_create()
         cap = cv2.VideoCapture(0)
-        userImg=None
-        for i in names:
-            print(i)
-            name = i
-            recognizer.read(f"./classifiers/{name}_classifier.xml")
-            pred = 0
-            for i in range(50):
-                
-                ret, frame = cap.read()
-                #default_img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-                faces = face_cascade.detectMultiScale(gray,1.3,5)
-                unknownPerson=frame
-                for (x,y,w,h) in faces:
+        counter=0
+        while True:
+            success, img = cap.read()
+            userImg=img
+            imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
+            imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
 
+            facesCurFrame = face_recognition.face_locations(imgS)
+            encodesCurFrame = face_recognition.face_encodings(imgS, facesCurFrame)
 
-                    roi_gray = gray[y:y+h,x:x+w]
-
-                    id,confidence = recognizer.predict(roi_gray)
-                    confidence = 100 - int(confidence)
-                    
-                    if confidence > 60:
-                        #if u want to print confidence level
-                                #confidence = 100 - int(confidence)
-                                pred = pred+1
-                                text = name.upper()
-                                font = cv2.FONT_HERSHEY_PLAIN
-                                frame = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-                                frame = cv2.putText(frame, text, (x, y-4), font, 1, (0, 255, 0), 1, cv2.LINE_AA)
-                                print("Matched Face")
-                                
-                                if(pred == 10):
-                                    time_now = datetime.datetime.now()
-                                    path = os.getcwd() + f"/results/" #{name}{time_now}.jpg"
-                                    #print(frame)
-                                    #print(path)
-                                    s = path+str(name) + str(time_now.date()) + "-" + str(time_now.hour) + "-" +str(time_now.minute) + "-" +str(time_now.second)
-                                    cv2.imwrite(s+".jpg", frame)
-                                    cv2.waitKey(2000)
-                                    cap.release()
-                                    cv2.destroyAllWindows()
-                                    excel_data = pd.read_excel('entries.xlsx')
-                                    excel_data.loc[len(excel_data)] = [name,datetime.datetime.now()]
-                                    excel_data.to_excel('entries.xlsx',index = False)
-                                    # userImg=Image.open(s+".jpg")
-                                    sendNotification(name,s+".jpg")#send notification
-                                    messagebox.showinfo("Notification","User Detected Open the door")
-                                    return    
-                    else:   
-                                #pred += -1
-                                text = "UnknownFace"
-                                font = cv2.FONT_HERSHEY_PLAIN
-                                frame = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
-                                frame = cv2.putText(frame, text, (x, y-4), font, 1, (0, 0,255), 1, cv2.LINE_AA)
-
-                cv2.imshow("image", frame)
-
-
-                if cv2.waitKey(20) & 0xFF == ord('q'):
-                    print(pred)
-                    
-        messagebox.showerror("Error","Unauthorized Person doors are closed")
+            for encodeFace, faceLoc in zip(encodesCurFrame, facesCurFrame):
+                matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
+                faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
+                print("FACE ID:",faceDis)
+                matchIndex = np.argmin(faceDis)
+                if matches[matchIndex]:
+                    name = classNames[matchIndex].upper()
+                    print(name)
+                    r=0
+                    b=0
+                    g=255
+                    if(name in deleted):
+                        r=0
+                        b=255
+                        g=0
+                        print("Eelement found in deleted listt-------------------------")   
+                    y1, x2, y2, x1 = faceLoc
+                    y1, x2, y2, x1 = y1*4, x2*4, y2*4, x1*4
+                    cv2.rectangle(img, (x1, y1), (x2, y2), (r, g, b), 2)
+                    cv2.rectangle(img, (x1, y2-35), (x2, y2), (r, g, b), cv2.FILLED)
+                    cv2.putText(img, name, (x1+6, y2-6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
+                    userName=name
+                    flg=1
+                    cv2.waitKey(2000)
+                    cap.release()
+                    cv2.destroyAllWindows()
+                    break
+                else:
+                    name = "UNKNOWN"
+                    print(name)
+                    y1, x2, y2, x1 = faceLoc
+                    y1, x2, y2, x1 = y1*4, x2*4, y2*4, x1*4
+                    cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2)
+                    cv2.rectangle(img, (x1, y2-35), (x2, y2), (0, 0, 255), cv2.FILLED)
+                    cv2.putText(img, name, (x1+6, y2-6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)  
+                    if(counter>=9):
+                        cv2.waitKey(2000)
+                        cap.release()
+                        cv2.destroyAllWindows()                  
+                        flg=1
+                        break
+            counter=counter+1        
+            
+            if(flg==1 or counter>=10):
+                break
+            if cv2.waitKey(20) & 0xFF == ord('q'):
+                    break
+            cv2.imshow('webcam', img)        
         time_now = datetime.datetime.now()
-        path = os.getcwd() + f"/results/" #{name}{time_now}.jpg"
+        path1 = os.getcwd() + f"/results/" #{name}{time_now}.jpg"
         #print(frame)
         #print(path)
-        s = path+str(name) + str(time_now.date()) + "-" + str(time_now.hour) + "-" +str(time_now.minute) + "-" +str(time_now.second)
-        cv2.imwrite(s+".jpg", frame)
-        sendNotification("Unknown_Person",s+".jpg")#send notification
-
-        cap.release()
-        cv2.destroyAllWindows()
-
-
-
+        s = path1+str(userName) + str(time_now.date()) + "-" + str(time_now.hour) + "-" +str(time_now.minute) + "-" +str(time_now.second)
+        cv2.imwrite(s+".jpg", userImg)
+        # print("PATH: ",s)
+        sendNotification(userName,s+".jpg")#    
+        # cap.release()
+        # cv2.destroyAllWindow()
 
 app = tk.Tk()   #creating application main window
+app.title("Who is there?")
 app.geometry("450x350")     
 app.resizable(False,False)
 container = tk.Frame(app)   #It can be defined as a container to which, another widget can be added and organized
