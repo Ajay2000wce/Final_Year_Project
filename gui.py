@@ -1,3 +1,4 @@
+from fileinput import filename
 from itertools import count
 from sre_constants import SUCCESS
 import tkinter as tk 
@@ -37,6 +38,7 @@ print(myList)
 for cl in myList:
     curImg = cv2.imread(f'{path}/{cl}')
     images.append(curImg)
+    print(os.path.splitext(cl)[0])
     classNames.append(os.path.splitext(cl)[0])
 print("Classname",classNames)
 
@@ -67,7 +69,7 @@ def startpage(container):
     # opens the image 
     img = Image.open('static/door.png') 
     
-    img = img.resize((180, 180), Image.ANTIALIAS) 
+    img = img.resize((180, 180), Image.Resampling.LANCZOS) 
     # PhotoImage class is used to add image to widgets, icons etc 
     img = ImageTk.PhotoImage(img) 
         # create a label 
@@ -80,7 +82,7 @@ def startpage(container):
 
     button1 = ttk.Button(container, text ="Admin",command = lambda : admin_clear_frame(container))  #call admin_clear_frame function on click
     button1.place(x = 95, y = 110)
-    button2 = ttk.Button(container, text ="Doorbell",command = lambda : doorbell()) #call doorbell function to check authorised user or not
+    button2 = ttk.Button(container, text ="Doorbell",command = lambda : doorbell(button1,button2)) #call doorbell function to check authorised user or not
     button2.place(x = 95,y = 210)
 
 def admin(container):
@@ -90,7 +92,7 @@ def admin(container):
     label.place(x = 180,y = 20)
     
     img = Image.open('static/login.png')    
-    img = img.resize((190, 190), Image.ANTIALIAS)   
+    img = img.resize((190, 190), Image.Resampling.LANCZOS)   
     img = ImageTk.PhotoImage(img) 
     
     panel = tk.Label(container, image = img) 
@@ -165,7 +167,7 @@ def new_user(container):
 
         path2=os.getcwd() + f"/Images_Attendance/"
         path2=path2+str(name)
-        vid = cv2.VideoCapture(0)
+        vid = cv2.VideoCapture(2)
   
         while(True):
             
@@ -204,6 +206,47 @@ def new_user(container):
         print("Encodeing done after image upload")
 
 
+    def upload_img(container,name):
+        if(name==""):
+            print("Empty user name")
+            return
+        data = pd.read_csv('User.csv')
+        if(name in list(data.Name)):
+            messagebox.showerror("Error","User Name already Exists")    
+            return
+
+        if(name.upper() in deleted):
+            deleted.remove(name.upper())
+        print("------------After deletion---------------",deleted)
+        data = pd.read_csv('User.csv')
+        data.loc[len(data.Name)] = [name]
+        data.set_index('Name',inplace=True)
+        data.to_csv('User.csv')
+
+        f_type=[('Jpg Files',"*.jpg")]
+        file_name=filedialog.askopenfilename(filetypes=f_type)
+        
+        img=cv2.imread(file_name)
+        path2=os.getcwd() + f"/Images_Attendance/"
+        path2=path2+str(name)
+        cv2.imwrite(path2+".jpg",img)
+        cv2.destroyAllWindows()
+
+        messagebox.showinfo("Notification","Imaged Saved !")
+        clear(container)
+
+
+        images.append(img)
+        classNames.append(name)
+        print("Classname",classNames)
+
+        
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        encode = face_recognition.face_encodings(img)[0]
+        encodeListKnown.append(encode)
+        print("Encodeing done after image upload")
+
+
 
     entry_name = tk.Entry(container,textvariable = new_user)    #take user name and save to new_user 
     print("Enter User Name:", new_user.get())
@@ -213,11 +256,13 @@ def new_user(container):
     
     button3 = ttk.Button(container, text ="Back",command = lambda : clear(container),state = tk.NORMAL) #adfter click go back to admin frame
 
+    button2 = ttk.Button(container, text ="Upload Img",command = lambda : upload_img(container,new_user.get()))
     #Button to create dataset
-    button1 = ttk.Button(container, text ="Upload Image",command = lambda : check(container,new_user.get())) 
+    button1 = ttk.Button(container, text ="Capture Image",command = lambda : check(container,new_user.get())) 
     
-    button1.place(x = 280, y = 180)
-    button3.place(x = 70,y = 180)
+    button1.place(x = 310, y = 180)
+    button2.place(x = 180,y = 180)
+    button3.place(x = 50,y = 180)
 
 def delete_selected(frame,Lb1): #delete selected user releted data
     a = Lb1.get(Lb1.curselection()).split(' ')
@@ -280,6 +325,7 @@ def user_list(container):   #show user list and perform delete operation if requ
 
 def sendNotification(personName,personImg):
     # Get the instance using access token
+    print("IN notification fun")
     pb = PushBullet(access_token)
     # Send the data by passing the main title
     # and text to be send
@@ -296,9 +342,12 @@ def sendNotification(personName,personImg):
     # the notification
     print("Message sent successfully...")
 
-def doorbell():
+def doorbell(button1,button2):
+
+        button1['state'] = "disabled"
+        button2['state'] = 'disabled'
         flg=0
-        userName="Unauthorised"
+        userName="UNKNOWN"
         userImg=None
         data = pd.read_csv("User.csv")
         names = list(data.Name)
@@ -307,12 +356,15 @@ def doorbell():
         while True:
             success, img = cap.read()
             userImg=img
+            if img is None:
+                continue
+            cv2.imshow('webcam', img)
             imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
             imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
 
             facesCurFrame = face_recognition.face_locations(imgS)
             encodesCurFrame = face_recognition.face_encodings(imgS, facesCurFrame)
-
+            
             for encodeFace, faceLoc in zip(encodesCurFrame, facesCurFrame):
                 matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
                 faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
@@ -321,24 +373,31 @@ def doorbell():
                 if matches[matchIndex]:
                     name = classNames[matchIndex].upper()
                     print(name)
+                  
                     r=0
                     b=0
                     g=255
                     if(name in deleted):
+                        name="UNKNOWN"
                         r=0
                         b=255
                         g=0
-                        print("Eelement found in deleted listt-------------------------")   
+                        print("Eelement found in deleted listt-------------------------")  
+
                     y1, x2, y2, x1 = faceLoc
                     y1, x2, y2, x1 = y1*4, x2*4, y2*4, x1*4
                     cv2.rectangle(img, (x1, y1), (x2, y2), (r, g, b), 2)
-                    cv2.rectangle(img, (x1, y2-35), (x2, y2), (r, g, b), cv2.FILLED)
-                    cv2.putText(img, name, (x1+6, y2-6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
+                    # cv2.rectangle(img, (x1, y2-35), (x2, y2), (r, g, b), cv2.FILLED)
+                    # cv2.putText(img, name, (x1+6, y2-6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
                     userName=name
                     flg=1
+                    
+                    print("After flg change")
+
                     cv2.waitKey(2000)
                     cap.release()
                     cv2.destroyAllWindows()
+                    print("Before break")
                     break
                 else:
                     name = "UNKNOWN"
@@ -346,9 +405,9 @@ def doorbell():
                     y1, x2, y2, x1 = faceLoc
                     y1, x2, y2, x1 = y1*4, x2*4, y2*4, x1*4
                     cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2)
-                    cv2.rectangle(img, (x1, y2-35), (x2, y2), (0, 0, 255), cv2.FILLED)
-                    cv2.putText(img, name, (x1+6, y2-6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)  
-                    if(counter>=9):
+                    # cv2.rectangle(img, (x1, y2-35), (x2, y2), (0, 0, 255), cv2.FILLED)
+                    # cv2.putText(img, name, (x1+6, y2-6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)  
+                    if(counter>=3):
                         cv2.waitKey(2000)
                         cap.release()
                         cv2.destroyAllWindows()                  
@@ -356,11 +415,13 @@ def doorbell():
                         break
             counter=counter+1        
             
-            if(flg==1 or counter>=10):
+
+            if(flg==1 or counter>=3):
                 break
+            # cv2.imshow('webcam', img) 
             if cv2.waitKey(20) & 0xFF == ord('q'):
                     break
-            cv2.imshow('webcam', img)        
+                   
         time_now = datetime.datetime.now()
         path1 = os.getcwd() + f"/results/" #{name}{time_now}.jpg"
         #print(frame)
@@ -368,7 +429,10 @@ def doorbell():
         s = path1+str(userName) + str(time_now.date()) + "-" + str(time_now.hour) + "-" +str(time_now.minute) + "-" +str(time_now.second)
         cv2.imwrite(s+".jpg", userImg)
         # print("PATH: ",s)
-        sendNotification(userName,s+".jpg")#    
+        print("Before calling notification")
+        sendNotification(userName,s+".jpg")
+        button2['state']="normal"
+        button1['state']="normal"
         # cap.release()
         # cv2.destroyAllWindow()
 
